@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashish Parmar - Software Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     body {
       background: #181a20;
       color: #fff;
     }
+
     .hero {
       background: radial-gradient(circle, #262626 0%, #181a20 100%);
       padding: 60px 0;
       min-height: 450px;
     }
+
     .hero-title {
       font-size: 2.2rem;
       font-weight: 700;
@@ -47,34 +50,46 @@
       background-color: #fc466b;
       border: none;
     }
+
     .btn-outline-light {
       border-color: #fc466b;
       color: #fc466b;
     }
+
     .services-icon {
       font-size: 1.7rem;
       margin-right: 12px;
       color: #fc466b;
     }
-    .stats { color: #fc466b; font-weight: bold; }
-    .nav-link, .navbar-brand {
+
+    .stats {
+      color: #fc466b;
+      font-weight: bold;
+    }
+
+    .nav-link,
+    .navbar-brand {
       color: #fff !important;
     }
+
     .divider {
       border: none;
       border-top: 1.5px solid #32343b;
       margin: 20px 0;
       opacity: 0.5;
     }
+
     .about-card {
       background: #1c1f27;
       border-radius: 12px;
       padding: 24px;
     }
+
     .services-list {
       padding-left: 0;
       list-style: none;
     }
+
     .services-list li {
       margin-bottom: 22px;
       display: flex;
@@ -85,17 +100,54 @@
       .hero-title {
         font-size: 1.45rem;
       }
+
       .profile-wrapper {
         width: 180px;
         height: 180px;
       }
+
       .profile-img {
         width: 150px;
         height: 150px;
       }
     }
+
+    /* ===========================
+       Aesthetic Navbar Link Styles
+       =========================== */
+    .nav-link {
+      position: relative;
+      color: #fff !important;
+      transition: color 0.3s ease, transform 0.3s ease;
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background: #fc466b;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #fc466b !important;
+      transform: scale(1.05);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark px-4">
     <div class="container-fluid">
@@ -136,57 +188,54 @@
       </div>
       <div class="col-md-6 text-center">
         <div class="profile-wrapper">
-          <img src="photomy.jpg" alt="Ashish Parmar Profile Image" class="profile-img">
+          <img src="img/photomy.jpg" alt="Ashish Parmar Profile Image" class="profile-img" />
         </div>
       </div>
     </div>
   </section>
 
-  <hr class="divider">  
+  <hr class="divider" />
 
   <section id="services" class="container py-2">
     <div class="row">
       <div class="col-md-5">
-        <ul class="services-list">
-          <li>
-            <span class="services-icon">&#128187;</span>
-            <span>Website Development</span>
-          </li>
-          <li>
-            <span class="services-icon">&#128421;</span>
-            <span>Website Hosting</span>
-          </li>
-        </ul>
+        <span class="services-icon">&#128187;</span>
+        <span>Website Development</span>
       </div>
-      <div class="row">
-    <div class="col-md-">
-        <div id="about" class="about-card mb-4">
-          <h4>About me</h4>
-          <p>
-            I started my software journey from photography. Through that, I learned to love the process of creating from scratch. Since then, this has led me to software development. It's a pursuit of fun for learning and building things.
-          </p>
-          <div class="d-flex gap-5 mt-2">
-            <div>
-              <div class="stats mb-1" style="font-size:1.25rem;">120+</div>
-              <div style="font-size:13px;">Completed Projects</div>
-            </div>
-            <div>
-              <div class="stats mb-1" style="font-size:1.25rem;">95%</div>
-              <div style="font-size:13px;">Client satisfaction</div>
-            </div>
-            <div>
-              <div class="stats mb-1" style="font-size:1.25rem;">10+</div>
-              <div style="font-size:13px;">Years of experience</div>
+      <div class="col-md-5">
+        <span class="services-icon">&#128421;</span>
+        <span>Website Hosting</span>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-">
+          <div id="about" class="about-card mb-4">
+            <h4>About me</h4>
+            <p>
+              I started my software journey from photography. Through that, I learned to love the process of creating
+              from scratch. Since then, this has led me to software development. It's a pursuit of fun for learning and
+              building things.
+            </p>
+            <div class="d-flex gap-5 mt-2">
+              <div>
+                <div class="stats mb-1" style="font-size:1.25rem;">120+</div>
+                <div style="font-size:13px;">Completed Projects</div>
+              </div>
+              <div>
+                <div class="stats mb-1" style="font-size:1.25rem;">95%</div>
+                <div style="font-size:13px;">Client satisfaction</div>
+              </div>
+              <div>
+                <div class="stats mb-1" style="font-size:1.25rem;">10+</div>
+                <div style="font-size:13px;">Years of experience</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-   
     </div>
   </section>
 
-  <hr class="divider">
+  <hr class="divider" />
 
   <section id="contact" class="container py-4 text-center">
     <h5>Contact</h5>
@@ -199,5 +248,37 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Remove active class from all links
+        navLinks.forEach(l => l.classList.remove('active'));
+
+        // Add active class to clicked link
+        link.classList.add('active');
+
+        // Smooth scroll to section
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Optional: Set "Home" as active on page load
+    window.addEventListener('load', () => {
+      const homeLink = document.querySelector('.nav-link[href="#hero"]');
+      if (homeLink) {
+        homeLink.classList.add('active');
+      }
+    });
+  </script>
 </body>
+
 </html>
