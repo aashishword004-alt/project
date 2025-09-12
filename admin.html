@@ -5,7 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ashish Parmar - Software Developer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    
   <style>
     body {
       background: #181a20;
@@ -145,10 +147,60 @@
     .nav-link.active::after {
       width: 100%;
     }
+      .gradient-card {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgb(101 41 255 / 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gradient-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgb(101 41 255 / 0.5);
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255 255 255 / 0.15);
+            color: white;
+            font-size: 18px;
+            margin: 0 0.3rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background-color: white;
+            color: #2575fc;
+            transform: scale(1.2);
+        }
+
+        .card-custom {
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 24px rgb(0 0 0 / 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgb(0 0 0 / 0.2);
+        }
+    
   </style>
 </head>
 
 <body>
+  
+  
   <nav class="navbar navbar-expand-lg navbar-dark px-4">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Ashish Parmar</a>
@@ -159,7 +211,7 @@
         <ul class="navbar-nav">
           <li class="nav-item"> <a class="nav-link" href="#hero">Home</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#about">About</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#services">Services</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#services">Project</a> </li>
           <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
         </ul>
       </div>
@@ -173,7 +225,7 @@
         <h2 class="hero-title">I'm Ashish Parmar</h2>
         <h3 class="mb-3" style="font-weight: bold;">Software Developer</h3>
         <div class="d-flex gap-2 mb-4">
-          <a class="btn btn-primary" href="#">Got a project?</a>
+          <a class="btn btn-primary" href="#project">Got a project?</a>
           <a class="btn btn-outline-light" href="#">My resume</a>
         </div>
         <div class="d-flex flex-wrap gap-3 mt-3 text-secondary" style="font-size:15px;">
@@ -206,9 +258,11 @@
         <span class="services-icon">&#128421;</span>
         <span>Website Hosting</span>
       </div>
+      <!-- About us-->
       <div class="row mt-5">
         <div class="col-md-">
           <div id="about" class="about-card mb-4">
+
             <h4>About me</h4>
             <p>
               I started my software journey from photography. Through that, I learned to love the process of creating
@@ -232,6 +286,50 @@
           </div>
         </div>
       </div>
+      <!-- Project note-->
+      <div class="container py-5" id="project">
+        <div class="row g-4 justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="gradient-card mb-3">
+                    
+                    <p class="mb-4">HTML / CSS / BOOTSTRAP</p>
+                    <div>
+                        <a href="#" class="social-icon"><i class="bi bi-filetype-html"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-filetype-css"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-bootstrap"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="col-md-4">
+                <div class="gradient-card mb-3">
+          
+                    <h3>JavaScript</h3>
+                    <div>
+                        <a href="#" class="social-icon"><i class="bi bi-filetype-js"></i></a>
+                
+                    </div>
+                </div>
+               
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="gradient-card mb-3">
+                    <h3>Reactjs</h3>
+                    <div>
+                        <a href="#" class="social-icon"><i class="bi bi-filetype-jsx"></i></a>
+                    </div>
+                </div>
+            
+            </div>
+
+        </div>
+    </div>
+
     </div>
   </section>
 
@@ -239,7 +337,7 @@
 
   <section id="contact" class="container py-4 text-center">
     <h5>Contact</h5>
-    <p>Email: <a href="mailto:contact@example.com" style="color:#fc466b;">contact@example.com</a></p>
+    <p>Email: <a href="mailto:contact@example.com" style="color:#fc466b;">aashishword004@gmail.com</a></p>
     <p>LinkedIn: <a href="#" style="color:#fc466b;">linkedin.com/in/ashishparmar</a></p>
   </section>
 
@@ -248,6 +346,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     const navLinks = document.querySelectorAll('.nav-link');
