@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Best of Test - Recipes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #181818;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #222;
+            padding: 3rem 0 2rem 0;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1s forwards 0.4s;
+        }
+
+        .hero-highlight {
+            color: #ff4433;
+            font-weight: 700;
+            animation: pulseGlow 2s infinite alternate;
+        }
+
+        .hero img {
+            opacity: 0;
+            transform: scale(0.7);
+            animation: zoomIn 1s forwards 0.8s;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulseGlow {
+            from {
+                text-shadow: 0 0 10px #ff4433;
+            }
+
+            to {
+                text-shadow: 0 0 25px #ff2222, 0 0 40px #ff4433;
+            }
+        }
+
+        /* Recipe Cards */
+        .recipe-card {
+            background: #222;
+            border-radius: 1rem;
+            box-shadow: 0 0 24px #1115;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            transition: transform 0.4s, box-shadow 0.4s;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .recipe-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 0.6s ease-out;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 40px #ff443377;
+        }
+
+        .recipe-img {
+            border-radius: 12px;
+            width: 100%;
+            max-width: 90px;
+            height: 90px;
+            object-fit: cover;
+            margin-bottom: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .recipe-card:hover .recipe-img {
+            transform: scale(1.2) rotate(3deg);
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 2rem 0 1.2rem 0;
+            border-bottom: 2px solid #ff4433;
+            display: inline-block;
+            padding-bottom: 0.2rem;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Navbar */
+        .navbar-dark .navbar-nav .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-dark .navbar-nav .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: #ff4433;
+            transition: left 0.3s;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover::after {
+            left: 0;
+        }
+
+        /* Contact Form */
+        input:focus,
+        textarea:focus {
+            border: 2px solid #ff4433 !important;
+            box-shadow: 0 0 10px #ff443377;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .btn-danger {
+            transition: transform 0.2s ease;
+        }
+
+        .btn-danger:hover {
+            transform: scale(1.05) translateY(-3px);
+            box-shadow: 0 0 15px #ff4433;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animated-brand {
+            color: #ff4433;
+            position: relative;
+            transition: color 0.3s;
+            animation: brandGlow 2s infinite alternate;
+        }
+
+        @keyframes brandGlow {
+            0% {
+                text-shadow: 0 0 2px #ff4433, 0 0 5px #ff4433;
+            }
+
+            50% {
+                text-shadow: 0 0 10px #ff4433, 0 0 20px #ff7755;
+            }
+
+            100% {
+                text-shadow: 0 0 5px #ff4433, 0 0 12px #ff5522;
+            }
+        }
+
+        .animated-brand:hover {
+            color: #fff;
+            text-shadow: 0 0 15px #ff4433, 0 0 25px #ff7744;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cointainer sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" style="box-shadow: 0 0 24px #1115;">
+            <div class="container">
+                <a class="navbar-brand fw-bold animated-brand" href="#">Best of Test Recipes</a> <button
+                    class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#featured">Featured Recipes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header class="container hero">
+        <h1 class="hero-title">Explore India’s rich and <span class="hero-highlight">authentic recipes</span></h1>
+        <p class="lead">Discover traditional dishes, cooking styles, and flavors from every state of India.</p>
+
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=500&q=80"
+            alt="Soup Dish" class="img-fluid rounded-circle shadow" style="width:180px;">
+    </header>
+
+    <main class="container">
+        <section>
+            <h2 class="section-title">Indian Recipes</h2>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+                <!-- Recipe Card -->
+                <div class="col">
+                    <div class="recipe-card text-center">
+                        <img src="https://images.unsplash.com/photo-1464306076886-debacca1b9c1?auto=format&fit=crop&w=90&q=80"
+                            class="recipe-img" alt="Chicken Soup">
+                        <h5>Hearty Chicken Soup</h5>
+                        <p>Warm, comforting, and packed with flavor – perfect for chilly evenings.</p>
+                        <a href="#">See Recipe</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mt-4" id="contact">
+            <h2 class="section-title">Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="Your Message" rows="3"></textarea>
+                </div>
+                <button class="btn btn-danger">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="container text-center mt-5 py-4 border-top" style="border-color:#ff4433;">
+        <small>© 2025 Best of Test. All rights reserved. Recipes only, no business.</small>
+    </footer>
+
+    <script>
+        // Scroll Animation for Recipe Cards
+        const cards = document.querySelectorAll('.recipe-card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+
+</html>
